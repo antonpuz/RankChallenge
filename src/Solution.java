@@ -125,6 +125,11 @@ public class Solution {
         
         for (int i=0 ; i< numberOfBlocks; i++)
         {
+        	if(S == D)
+        	{
+        		System.out.println(0);
+        		continue;
+        	}
         	int distance = 0;
         	
             int blockedRoad1 = input.nextInt();
@@ -148,6 +153,7 @@ public class Solution {
             for(NodeRelationItem item : nri)
             {
             	if(item.getfirstNodeId() == blockedRoad1 && item.getsecondNodeId() == blockedRoad2) continue;
+            	if(item.getfirstNodeId() < 0 || item.getfirstNodeId() >= cities || item.getsecondNodeId() < 0 || item.getsecondNodeId() >= cities) continue;
             	queue.add(item);
             }
             
@@ -179,6 +185,7 @@ public class Solution {
                 for(NodeRelationItem item : nri)
                 {
                 	if(item.getfirstNodeId() == blockedRoad1 && item.getsecondNodeId() == blockedRoad2) continue;
+                	if(item.getfirstNodeId() < 0 || item.getfirstNodeId() >= cities || item.getsecondNodeId() < 0 || item.getsecondNodeId() >= cities) continue;
                 	queue.add(item);
                 }
             }
