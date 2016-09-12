@@ -130,7 +130,7 @@ public class Solution {
         		System.out.println(0);
         		continue;
         	}
-        	int distance = 0;
+        	long distance = 0;
         	
             int blockedRoad1 = input.nextInt();
             int blockedRoad2 = input.nextInt();
@@ -144,7 +144,7 @@ public class Solution {
             //System.out.println("There is blocked road from: " + blockedRoad1 + " to: " + blockedRoad2);
             
             int[] markedCities = new int[cities];
-            int[] distanceWeights = new int[cities];
+            long[] distanceWeights = new long[cities];
             HashMap<Integer, ArrayList<NodeRelationItem>> neighboringTmp = (HashMap<Integer, ArrayList<NodeRelationItem>>) neightboring.clone();
             
             ArrayList<NodeRelationItem> nri = neighboringTmp.getOrDefault(S, new ArrayList<NodeRelationItem>());
@@ -197,11 +197,11 @@ public class Solution {
             
             if(nextNode.getfirstNodeId() == D)
             {
-            	System.out.println(distanceWeights[nextNode.getsecondNodeId()] + nextNode.getDistance());
+            	System.out.println((long)(distanceWeights[nextNode.getsecondNodeId()] + nextNode.getDistance()));
             }
             else
             {
-            	System.out.println(distanceWeights[nextNode.getfirstNodeId()] + nextNode.getDistance());
+            	System.out.println((long)(distanceWeights[nextNode.getfirstNodeId()] + nextNode.getDistance()));
             }
             
             queue.clear();
